@@ -2,17 +2,16 @@
 
 :root {
   --header-height: 4rem;
-
   --first-color: gold;
   --first-color-light: gold;
-  --text-color: #111  ;
+  --text-color: #111;
   --text-color-light: ;
-
   --body-font: 'Nunito Sans', sans-serif;
 }
 
-.mtlogo{height: 70px;
-  width: 34%;
+.mtlogo {
+  height: 70px;
+  width: 25%;
   margin-bottom: 5px;
 }
 
@@ -50,7 +49,7 @@ img {
 
 .container {
   max-width: 1124px;
-  margin-inline: 1.5rem;
+  margin-inline: 1rem;
 }
 
 .row {
@@ -110,7 +109,7 @@ img {
 }
 
 
-.nav-logo1   {
+.nav-logo1 {
   font-weight: 700;
   font-size: 1.6rem;
   color: #111;
@@ -118,7 +117,7 @@ img {
 
 
 .nav-logo1 span {
-  color:black;
+  color: black;
 }
 
 
@@ -219,6 +218,7 @@ img {
   color: black;
   font-weight: 700;
 }
+
 /* end */
 
 /* style about */
@@ -246,7 +246,7 @@ img {
   font-weight: 700;
   color: var(--text-color);
   margin-bottom: 1rem;
-text-align: center;
+  text-align: center;
 }
 
 
@@ -294,6 +294,7 @@ text-align: center;
   height: auto;
   margin-bottom: 1rem;
 }
+
 /* end */
 
 /* membership plan */
@@ -363,6 +364,7 @@ text-align: center;
   background-color: var(--first-color);
   color: #fff;
 }
+
 /* end */
 
 /* newsletter style */
@@ -379,13 +381,13 @@ text-align: center;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.3rem;
-color: black;
+  color: black;
 }
 
 .newsletter-subtitle {
   font-weight: 300;
   margin-bottom: 1.7rem;
-color: black;
+  color: black;
 }
 
 .form-group {
@@ -411,7 +413,7 @@ color: black;
   border: none;
   height: 35px;
   padding: 0 1rem;
-  color: black  ;
+  color: black;
   font-weight: 400;
   font-size: 1rem;
   margin-right: 0.4rem;
@@ -452,6 +454,7 @@ color: black;
 .footer-feature-list li {
   margin-bottom: 0.6rem;
 }
+
 .footer-feature-list li a {
   color: var(--text-color);
   font-size: 1.1rem;
@@ -511,7 +514,7 @@ color: black;
   .nav-menu {
     display: flex;
     align-items: center;
-    column-gap: 2.5rem;
+    column-gap: 1.3rem;
   }
 
   .nav-list {
@@ -534,6 +537,7 @@ color: black;
   .about-wrapper {
     flex-wrap: wrap;
   }
+
   .about-image {
     width: 100%;
   }
@@ -586,15 +590,60 @@ color: black;
 
 
 /* Loginpage */
+.cover-card {
+  background-color: var(--first-color);
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  margin-bottom: 150px;
+}
 
-.cover{background-color:gold;
- text-align: center;
-  width: 20em;
-  height: 20em;
-  border-radius: 1em;
-  box-shadow: 0,0.188em 1.550em rgb(100, 156, 156);
-  
+.cover-group {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 500px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+}
+
+.cover-title {
+  margin-bottom: 0.8rem;
+  color: #111;
 
 }
 
+.cover-label {
+  font-size: 16px;
+  color: #111;
+  font-weight: bolder;
+  font-size: large;
+  padding-bottom: 5px;
 
+}
+
+.cover-label[type="text"],
+.cover-label[type="password"] {
+  padding: 8px;
+  border: 1px solid #090909;
+  border-radius: 5px;
+  margin-bottom: 16px;
+}
+
+.cover-button {
+  border: 1px solid var(--first-color);
+  padding: 0.5rem 0;
+  color: black;
+  width: 100%;
+  display: block;
+  transition: 0.6s;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+.cover-button:hover {
+  background-color: var(--first-color);
+  color: #191818;
+}
