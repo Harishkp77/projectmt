@@ -20,14 +20,14 @@ const Loginpage = () => {
             <label className="cover-label">Username</label>
             <input
               type="text"
-              placeholder="username"
+              placeholder="Enter username"
               className="cover-label"
               onChange={(e) => setusername(e.target.value)}
             />
             <label className="cover-label">Password</label>
             <input
               type="Password"
-              placeholder="password"
+              placeholder="Enter password"
               className="cover-label"
               onChange={(e) => setpassword(e.target.value)}
             />
