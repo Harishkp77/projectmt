@@ -47,7 +47,7 @@ const Header = () => {
               </a>
             </li>
          
-          <li>
+            <li >
           <a href="#program" className="btn btn-primary nav-button">
             Become Member
           </a>

@@ -1,20 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 const Loginpage = () => {
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const passwordRef = useRef(null);
 
-  const checklogin = () => {
-    if (username.trim() === "" || password === "") {
+  const checklogin = (e) => {
+    e.preventDefault();
+
+    
+
+    if (username.trim() === "" && password === "") {
       setErrorMessage("Please fill in both username and password.");
+    } else if (username.trim() === "") {
+      setErrorMessage("Please fill in the username.");
+    } else if (password === "") {
+      setErrorMessage("Please fill in the password.");
     } else if (username === "admin" && password === "1111") {
-      alert("login successful");
-      setErrorMessage("");
-      setusername("");
-      setpassword(""); 
+      setErrorMessage("Login successful");
+      setTimeout(() => {
+        setErrorMessage("");
+        setusername("");
+        setpassword("");
+      }, 5000);
+    } else if (username === "admin") {
+      setErrorMessage("Invalid password.");
+    } else if (password === "1111") {
+      setErrorMessage("Invalid username.");
     } else {
       setErrorMessage("Invalid username or password.");
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      if (e.target.name === "username") {
+        passwordRef.current.focus(); // Move focus to the password input field
+      } else {
+        checklogin(e); // Trigger the login function when "Enter" is pressed in the password input field
+      }
     }
   };
 
@@ -26,20 +52,30 @@ const Loginpage = () => {
           <label className="cover-label">Username</label>
           <input
             type="text"
+            name="username"
             placeholder="Enter username"
             className="form-control"
+            value={username}
             onChange={(e) => setusername(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
           <label className="cover-label">Password</label>
           <input
             type="password"
+            name="password"
             placeholder="Enter password"
             className="form-control"
+            value={password}
             onChange={(e) => setpassword(e.target.value)}
+            onKeyDown={handleKeyDown}
+            ref={passwordRef}
           />
-          {errorMessage && <p className="error-message">{errorMessage}</p>}
+       
+          {errorMessage && (
+            <p className="alert alert-danger">{errorMessage}</p>
+          )}
 
-          <button onClick={checklogin} className="btn btn-primary cover-button">
+          <button onClick={checklogin} className="cover-button">
             Login
           </button>
         </form>

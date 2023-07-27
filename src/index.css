@@ -11,11 +11,13 @@
   background-color: #f8f8f8;
   padding: 20px;
 }
-/* Custom CSS for the Header component */
+
 .Header .navbar-brand {
-  font-size: 40px; /* Adjust the font size as needed */
+  font-size: 35px;
+ 
 }
 
+ 
 
 
 .mtlogo {
@@ -37,9 +39,10 @@ html {
 .navbar-nav {
   display: flex;
   margin-left: auto;
-  gap:5px;
-  justify-content: flex-end;
-  align-items: flex-end;
+  gap: 5px;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 20px;
 }
 
 
@@ -52,28 +55,29 @@ html {
 .cover-button:hover {
   background-color: var(--first-color);
   color: #191818;
- 
+
 }
 
-/* Click effect for buttons */
 .nav-button:active,
 .cover-button:active {
   background-color: #191818;
   color: var(--first-color);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .navbar-nav {
+    display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    margin-left: 0;
+    justify-content: flex-end;
+    align-items: self-end;
+    margin-top:50vh;;
   }
 
   .navbar-nav li {
     margin-right: 10px;
     margin-bottom: 10px;
   }
+
   .navbar-nav li:active a {
     color: gold;
   }
@@ -82,7 +86,7 @@ html {
 /* Assuming 'Header' is the component name */
 .Header {
   height: var(--header-height);
-  margin-bottom: 38px;
+  margin-bottom:30px;
 }
 
 /* Assuming 'Hero' and 'About' are sibling components */
@@ -100,6 +104,7 @@ html {
   max-height: 500px;
   object-fit: cover;
 }
+
 .about-title {
   font-weight: 700;
   font-size: 2rem;
@@ -206,7 +211,7 @@ html {
 .membership-btn:hover {
   background-color: var(--first-color);
   color: #fff;
- 
+
 }
 
 /* Assuming 'Newsletter' and 'Footer' are sibling components */
@@ -219,8 +224,25 @@ html {
   text-align: center;
   padding-top: 4rem;
   padding-bottom: 4rem;
-  color: #fff;
+  color: black;
 }
+
+
+.alert-danger {
+  background-color: var(--first-color);
+  color: black;
+  font-weight: bolder;
+  border-radius: 4px;
+  max-width: 400px;
+  margin: auto;
+  height: 50px; /* Adjust the height value as per your requirement */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
 
 .newsletter-title {
   font-size: 2rem;
@@ -325,11 +347,7 @@ html {
   color: #191818;
 }
 
-.error-message {
-  color: red;
-  font-size: 14px;
-  margin-top: 5px;
-}
+
 
 /* Footer Component Styles */
 .footer {
@@ -401,12 +419,15 @@ html {
 /* Add this media query to adjust the footer layout on smaller screens */
 @media screen and (max-width: 768px) {
   .footer-feature {
-    flex-direction: column; /* Stack the columns vertically on smaller screens */
+    flex-direction: column;
+    /* Stack the columns vertically on smaller screens */
   }
 
   .footer-feature .col {
-    max-width: 100%; /* Make each column take full width on smaller screens */
-    margin-bottom: 1rem; /* Add some spacing between stacked columns */
+    max-width: 100%;
+    /* Make each column take full width on smaller screens */
+    margin-bottom: 1rem;
+    /* Add some spacing between stacked columns */
   }
 
   /* Adjust the font size of the footer feature list items on smaller screens */

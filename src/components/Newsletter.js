@@ -1,6 +1,23 @@
-import React from "react";
+import React,{useState} from "react";
 
 const Newsletter = () => {
+  const [emailid, setemailid] = useState("");
+  const [message, setMessage] = useState("");
+
+  const getEmailid = (e) => {
+    e.preventDefault();
+    if (emailid.trim() === ""){
+      setMessage("Please Enter your Email ID");
+    }
+    else {
+      setMessage(" " + emailid +" "+"Subscribed sucessfully");
+      setTimeout(() => {
+        setMessage("");
+      }, 10000);
+    }
+    
+  }
+
   return (
     <section className="container newsletter">
       <div className="newsletter-card">
@@ -12,9 +29,12 @@ const Newsletter = () => {
               type="email"
               className="form-control form-input"
               placeholder="Enter your email address"
+              onChange={(e) => setemailid(e.target.value)}
             />
-            <button className="btn btn-primary newsletter-button">Subscribe</button>
+            
+            <button onClick={getEmailid} className="btn btn-primary newsletter-button">Subscribe</button>
           </div>
+          {message && <p className="alert alert-danger">{message}</p>}
         </form>
       </div>
     </section>
