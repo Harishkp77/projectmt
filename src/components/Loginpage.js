@@ -19,27 +19,27 @@ const Loginpage = () => {
   };
 
   return (
-    <section class="container" id="login">
+    <section className="container" id="login">
       <div className="cover-card">
-        <h1 class="cover-title">Login</h1>
+        <h1 className="cover-title">Login</h1>
         <form action="" className="cover-group">
           <label className="cover-label">Username</label>
           <input
             type="text"
             placeholder="Enter username"
-            className="cover-label"
+            className="form-control"
             onChange={(e) => setusername(e.target.value)}
           />
           <label className="cover-label">Password</label>
           <input
-            type="Password"
+            type="password"
             placeholder="Enter password"
-            className="cover-label"
+            className="form-control"
             onChange={(e) => setpassword(e.target.value)}
           />
           {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-          <button onClick={checklogin} class="cover-button">
+          <button onClick={checklogin} className="btn btn-primary cover-button">
             Login
           </button>
         </form>
