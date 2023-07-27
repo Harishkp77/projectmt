@@ -11,10 +11,16 @@
   background-color: #f8f8f8;
   padding: 20px;
 }
+/* Custom CSS for the Header component */
+.Header .navbar-brand {
+  font-size: 40px; /* Adjust the font size as needed */
+}
+
+
 
 .mtlogo {
-  height: 60px;
-  width: 50%;
+  height: 50px;
+  width: 30%;
   margin-bottom: 5px;
 }
 
@@ -76,7 +82,7 @@ html {
 /* Assuming 'Header' is the component name */
 .Header {
   height: var(--header-height);
-  margin-bottom: 40px;
+  margin-bottom: 38px;
 }
 
 /* Assuming 'Hero' and 'About' are sibling components */
