@@ -77,7 +77,7 @@ const Loginpage = () => {
 
           {errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
 
-          <button onClick={checklogin} className="cover-button">
+          <button onClick={checklogin} className="btn btn-primary cover-button">
             Login
           </button>
         </form>

@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
 const Newsletter = () => {
   const [emailid, setemailid] = useState("");
@@ -6,17 +6,15 @@ const Newsletter = () => {
 
   const getEmailid = (e) => {
     e.preventDefault();
-    if (emailid.trim() === ""){
+    if (emailid.trim() === "") {
       setMessage("Please Enter your Email ID");
-    }
-    else {
+    } else {
       setMessage(emailid + " Subscribed successfully");
       setTimeout(() => {
         setMessage("");
       }, 10000);
     }
-    
-  }
+  };
 
   return (
     <section className="container newsletter">
@@ -31,10 +29,16 @@ const Newsletter = () => {
               placeholder="Enter your email address"
               onChange={(e) => setemailid(e.target.value)}
             />
-            
-            <button onClick={getEmailid} className="btn btn-primary newsletter-button">Subscribe</button>
+            <button
+              onClick={getEmailid}
+              className="btn btn-primary newsletter-button"
+            >
+              Subscribe
+            </button>
           </div>
-          {message && <p className="alert alert-danger">{message}</p>}
+          <div className="newsletter-subtitle">
+            {message && <p className="alert alert-danger">{message}</p>}
+          </div>
         </form>
       </div>
     </section>
