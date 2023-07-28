@@ -52,7 +52,7 @@ const Loginpage = () => {
     <section className="container" id="login">
       <div className="cover-card">
         <h1 className="cover-title">Login</h1>
-        <form action="" className="cover-group">
+        <form onSubmit={checklogin} className="cover-group">
           <label className="cover-label">Username</label>
           <input
             type="text"
@@ -77,7 +77,7 @@ const Loginpage = () => {
 
           {errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
 
-          <button onClick={checklogin} className="btn btn-primary cover-button">
+          <button type="submit" className="btn btn-primary cover-button">
             Login
           </button>
         </form>
