@@ -5,19 +5,23 @@ const Loginpage = () => {
   const [password, setpassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const passwordRef = useRef(null);
+  //const alphanumericRegex = /^[a-zA-Z0-9]+$/;
 
   const checklogin = (e) => {
     e.preventDefault();
-
-    
-
     if (username.trim() === "" && password === "") {
       setErrorMessage("Please fill in both username and password.");
     } else if (username.trim() === "") {
       setErrorMessage("Please fill in the username.");
-    } else if (password === "") {
+    } /*else if (!username.match(alphanumericRegex)) {
+        setErrorMessage("Username should contain only alphanumeric characters.");
+    }*/ else if (password === "") {
       setErrorMessage("Please fill in the password.");
-    } else if (username === "admin" && password === "1111") {
+    } /*else if (password.includes(" ")) {
+      setErrorMessage("Password should not contain spaces.");
+    } else if (password.length > 15) {
+      setErrorMessage("Password should not exceed 15 characters.");
+    } */else if (username === "admin" && password === "1111") {
       setErrorMessage("Login successful");
       setTimeout(() => {
         setErrorMessage("");
@@ -70,10 +74,8 @@ const Loginpage = () => {
             onKeyDown={handleKeyDown}
             ref={passwordRef}
           />
-       
-          {errorMessage && (
-            <p className="alert alert-danger">{errorMessage}</p>
-          )}
+
+          {errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
 
           <button onClick={checklogin} className="cover-button">
             Login

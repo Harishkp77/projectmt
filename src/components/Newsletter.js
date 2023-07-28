@@ -10,7 +10,7 @@ const Newsletter = () => {
       setMessage("Please Enter your Email ID");
     }
     else {
-      setMessage(" " + emailid +" "+"Subscribed sucessfully");
+      setMessage(emailid + " Subscribed successfully");
       setTimeout(() => {
         setMessage("");
       }, 10000);
